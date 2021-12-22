@@ -16,3 +16,13 @@ gpg -r alexandre.osada@gmail.com -e {file}
 
 === Descriptografar arquivos ===
 gpg -d {file}
+
+=== Exportar/Importar chave ===
+gpg --export-secret-key {key_name} > {file_name}
+gpg --import {file_name}
+
+=== Expirar chave ===
+gpg --edit-key {key_name}
+key {num}
+expire
+save
