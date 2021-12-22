@@ -1,0 +1,4 @@
+= DDD =
+
+- [[bounded_contexts|Bounded Cotexts]]
+- [[event-storming.wiki| Event Storming]]

@@ -1,0 +1,10 @@
+= Solidity =
+
+== Compiling contracts ==
+
+`solc --optimize --abi {contract.sol} -o build`
+`solc --optimize --bin {contract.sol} -o build`
+
+== Generate go files for interacting with the smart contract ==
+
+`abigen --abi={path_to_abi} --bin={path_to_bin} --pkg={pkg_name} --out={out_file.go}`

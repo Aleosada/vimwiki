@@ -1,0 +1,49 @@
+= CloudFormation =
+
+== Makefile ==
+
+validate:
+	aws cloudformation validate-template --template-body file://${filename}.yml
+
+estimate:
+	aws cloudformation estimate-template-cost \
+		--template-body file://${filename}.yml \
+		--parameters \
+        file://${filename}.json \
+		ParameterKey=InstanceType,ParameterValue=t2.micro \
+		ParameterKey=KeyName,ParameterValue=awskeypair \
+		ParameterKey=VpcId,ParameterValue=vpc-1c87767a
+
+create:
+	aws cloudformation create-stack \
+		--template-body file://${filename}.yml \
+		--stack-name ${stackName} \
+        --capabilities CAPABILITY_IAM \
+        --role-arn ${arn} \
+
+		--parameters \
+        file://${filename}.json \
+		ParameterKey=InstanceType,ParameterValue=t2.micro \
+		ParameterKey=KeyName,ParameterValue=awskeypair \
+		ParameterKey=VpcId,ParameterValue=vpc-1c87767a
+
+changeset:
+	aws cloudformation create-change-set \
+		--stack-name ${stackName} \
+        --change-set-name $(uuidgen) \
+		--template-body file://${filename}.yml \
+        --capabilities CAPABILITY_IAM \
+
+		--parameters \
+        file://${filename}.json \
+		ParameterKey=InstanceType,ParameterValue=t2.micro \
+		ParameterKey=KeyName,ParameterValue=awskeypair \
+		ParameterKey=VpcId,ParameterValue=vpc-1c87767a
+
+execute:
+	aws cloudformation execute-change-set \
+		--stack-name ${stackName} \
+        --change-set-name NewSet1 \
+
+delete:
+    aws cloudformation delete-stack --stack-name ${stackName}

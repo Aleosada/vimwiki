@@ -1,0 +1,92 @@
+= Event Storming =
+
+== Setup ==
+
+- Whiteboard horizontal grande
+- Post-its de cores diferentes
+- Facilitador
+- Domain Experts
+- Development Team
+- Introdução do problema
+
+==  Plotting Events ==
+
+- Usar post-its laranjas para descrever eventos
+- Eventos são plotados em ordem (esquerda para direita) na timeline
+- Eventos podem acontecer em paralelo
+- Utilizar a linguagem de domínio e não técnica para descrever os eventos
+- Eventos podem ser reorgazinados a partir das discussões
+- Os eventos são escritos no tempo passado
+
+== Plotting Definitions ==
+
+Durante a sessão alguns termos podem ser estranhos para as pessoas.
+O objetivo dessa prática é clarificar os termos de domínios utilizados durante o mapeamento dos eventos.
+
+- Utilizar post-its verdes
+- Colocar as definições preferencialmente acima dos eventos correspondentes
+
+== Plotting Concerns ==
+
+Registrar as preocupações com os eventos
+
+- Utilizar post-its roxos
+- Pode ser feita uma votação para eleger as preocupações mais importantes
+- Não é necessário resolver as preocupações durante a sessão!!
+
+== Plotting Commands ==
+
+Mapear sistemas e usuários que iniciam os eventos
+
+- Utilizar post-its azul para comandos
+- Utilizar post-its amarelos para representar o papel do usuário que inicia o comando
+
+== Plotting External Systems ==
+
+Podem ser qualquer sistema que não faça parte do que se está sendo modelado
+
+- Utilizar post-its rosas
+- Disparados por comandos do sistema mapeado
+- Retorno dispara novos comandos ou eventos
+
+== Plotting Time Triggered Events ==
+
+Registrar eventos disparados em algum intervalo de tempo e não por usuários e sistemas
+
+- Utilizar post-its laranjas
+- Associar eventos de tempo com os de domínio
+
+== Plotting Policies ==
+
+Políticas são ações que ficam entre um evento e um comando.
+Quando o(s) evento(s) acontecerem então chama o(s) comando(s)
+
+- Utilizar post-its lilas
+- Podem ser automaticas ou com intervenção de um usuário
+- Uma política reage a um evento
+
+== Plotting Read-Models ==
+
+Usado para destacar dados importantes e necessários para etapa
+
+- Podem ser:
+    - Dados na tela
+    - Dados do banco de dados
+- Não é necessário colocar todos os modelos das etapas
+
+== Plotting Aggregated ==
+
+- Utilizar post-its amarelos
+- Comandos agem nos agregados
+- Agregados emitem eventos
+- Mantem o estado dos dados consistentes
+- São substantivos
+- Agrupam comandos e eventos
+
+== Drawing Boundaries ==
+
+- Agrupar agregados relacionados e conceitos
+- Timeline não é mais necessária
+- Nomear os contextos delimitados
+
+== Consolidating and Decomposing ==

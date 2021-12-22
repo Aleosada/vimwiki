@@ -1,0 +1,35 @@
+= DynamoDb =
+
+== Useful commands ==
+
+=== List tables ===
+
+{{{
+aws dynamodb list-tables
+}}}
+
+=== Put Item ===
+
+{{{
+aws dynamodb put-item \
+--table-name {table_name} \
+--item file://{file}
+}}}
+
+=== Get Item ===
+
+{{{
+aws dynamodb get-item \
+--table-name {table_name} \
+--key '{"Id":{"S":"key"}}'
+}}}
+
+=== Query Item ===
+
+{{{
+aws dynamodb query --table-name Temperatures \
+--expression-attribute-names '{"#date":"Date","#city":"City"}' \
+--expression-attribute-values '{":key":{"S":"São Paulo"}}' \
+--key-condition-expression "#city = :key" \
+--projection-expression "#city,#date"
+}}}

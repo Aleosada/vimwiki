@@ -1,0 +1,28 @@
+= Bounded Contexts =
+
+== Relacionamentos ==
+
+1. Single bonded context
+
+Nesse modelo os times trabalham no mesmo bonded context e compartilham code base
+
+2. Shared Kernel
+
+Nesse modelo existem dois bonded contexts mas uma intersecção entre eles compartilhada entre os dois times onde as alterações devem ser feitas em acordo
+
+3. Customer/Supplier
+
+Nesse modelo a fluxo de dados flui de um dos contextos (Upstream) para o outro (Downstream) de forma unidirecional.
+O customer participar do planejamento das entregas do supplier para garantir a confirmidade e priorização, de forma a não quebrar os sistemas dele.
+Pode ser construído um tradução que ficará como responsabilidade da camada de upstream.
+
+4. Conformist
+
+Nesse modelo o contexto aceita o dominío do outro contexto pela impossibilidade de muda-lo ou controla-lo, e custo de criação de uma camada de anticorrupção
+
+5. Anticorruption
+
+Nesse modelo o time adota uma postura mais defensiva ao outro contexto, construindo uma camada de tradução na qual ele ficará responsável.
+Essa camada e compostas de serviços expostos, tradutores, adaptadores e facades para trafegar as mensagens em ambas as direções
+
+6. Separate Ways

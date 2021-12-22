@@ -1,0 +1,14 @@
+= Lição 1 - Nomes =
+
+- Fullname | Complete name == Nome completo
+- Firstname | Christian name | Forename == Primeiro nome
+- Middle name == Nome do meio
+- Lastname | Family name | Surname == Último nome
+
+
+| Firstname      | Middle name      | Lastname    |
+| Christian name |                  | Family name |
+| Forename       |                  | Surname     |
+|----------------|------------------|-------------|
+| Primeiro nome  | Nome do meio     | Último nome |
+| Alexandre      | I don't have one | Osada       |
