@@ -8,3 +8,4 @@
 * [[opentelemetry/index.wiki|OpenTelemetry]]
 * [[Tmux]]
 * [[solidity/index.wiki|Solidity]]
+* [[python/index.wiki|Python]]

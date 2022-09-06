@@ -1,5 +1,9 @@
 = Shell =
 
+== Comando para iniciar ssh-agent e cachear rsa key ==
+eval $(ssh-agent)
+ssh-add
+
 == Comando para gerar senha aleatórias e copiar para o clipboard ==
 openssl rand -base64 12 | xclip -selection c
 
